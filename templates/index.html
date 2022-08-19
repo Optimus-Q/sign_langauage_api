@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cancer detection API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel = "icon" href =  "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" type = "image/x-icon">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+      <style>
+      #d1{
+          overflow :scroll;
+      }</style>
+<body>
+ <div class="login">
+	<h1>Cancer diagnosis</h1>
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="mean radius" placeholder="mean radius" required="required" />
+        <input type="text" name="mean perimeter" placeholder="mean perimeter" required="required" />
+		<input type="text" name="mean area" placeholder="mean area" required="required" />
+		<input type="text" name="mean concavity" placeholder="mean concavity" required="required" />
+		<input type="text" name="mean concave points" placeholder="mean concave points" required="required" />
+        <input type="text" name="worst radius" placeholder="worst radius" required="required" />
+		<input type="text" name="worst area" placeholder="worst area" required="required" />
+        <input type="text" name="worst perimeter" placeholder="worst perimeter" required="required" />
+        <input type="text" name="worst concavity" placeholder="worst concavity" required="required" />
+        <input type="text" name="worst concave points" placeholder="worst concave points" required="required" />
+
+		
+        <button type="submit" class="btn btn-primary btn-block btn-large">Launch the prediction</button>
+    </form>
+
+   <br>
+
+   {{ prediction_text }}
+
+
+
+ </div>
+
+
+</body>
+</html>
